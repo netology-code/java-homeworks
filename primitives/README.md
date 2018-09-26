@@ -52,7 +52,7 @@
   System.out.println("В какой единице измерения вернуть значение (ч - часы, м - минуты, c - секунды)");
   ```
 11. Если пользователь ввел `end` и `totalTime` меньше или равно нулю, выйти из цикла и завершить работу программы.
-Структура будет такая:
+Структура программы будет примерно такая:
 ```
       //Создаем scanner - объектор который будет считывать из стандартного потока ввода/вывода (console)
       Scanner scanner = new Scanner(System.in);
@@ -64,7 +64,7 @@
           //TODO
           String task = input;
           int time = scanner.nextInt();
-          int unit = scanner.next();
+          String unit = scanner.next();
           ...
           //Переведем время в секунды
           switch (unit) {
@@ -76,8 +76,19 @@
           totalTime += time
       }
       //После ввода "end" проверяем если totalTime
-      
-
+      if (totalTime > 0) {
+        System.out.println("В какой единице измерения вернуть значение (ч - часы, м - минуты, c - секунды)");
+        String unit = scanner.next()
+        //Переводим в необходимую единицу измерения
+        switch (unit) {
+          case "ч" : totalTime = totalTime / 3600;
+            break;
+          case "м" : totalTime = totalTime / 60;
+            break;     
+        }
+        //Выводим результат
+        System.out.println(totalTime + " " + unit);
+      }
 ```    
 
 ## Задача № 2
