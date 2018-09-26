@@ -102,23 +102,57 @@
 
 ### Процесс реализации
 
-1. Создаем функцию isValidDateFormat, принимающую на вход строку `inputDate` и возвращающую тип true или false (boolean).
+1. Создаем функцию `isValidDateFormat`, принимающую на вход строку `inputDate` и возвращающую тип true или false (boolean).
+   ```
+   boolean isValidDateFormat(String inputDate) {
+      //TODO
+   }
+   ```
 2. В этой функции создаем: 
-   - Создаем перменную типа строка, в которую запишем наш формат для валидации дат, например: `String dateFormat = yyyy-MM-dd-hh-mm-ss`.
-   - Создаем новую переменную `dateFormatter` типа DateTimeFormatter (можно использовать устаревший вариант SimpleDateFormat), с форматом который создали выше.
-3. Вызываем у `dateFormatter` метод `parse`, которому передаем данные полученные на входе `inputDate`.
+   - Создаем перменную типа строка, в которую запишем наш формат для валидации дат, например: `String dateFormat = "yyyy-MM-dd-hh-mm-ss"`.
+   - Создаем новую переменную `dateFormatter` типа `DateTimeFormatter` (можно использовать устаревший вариант SimpleDateFormat), с форматом который создали выше.
+   ```
+   boolean isValidDateFormat(String inputDate) {
+      String dateFormat = "yyyy-MM-dd-hh-mm-ss";
+      DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(dateFormat);
+      //TODO
+   }
+   ```
+3. Вызываем у `dateFormatter` метод `parse`, которому передаем данные полученные на входе `inputDate` и сохраняем в перменную parsedDate типа TemporalAccessor.
+   ```
+   TemporalAccessor parsedDate = dateTimeFormatter.parse(inputDate);
+   ```
 4. Проверяем, что результат выполнения метода выше вернул объект и возвращаем `true`, в противном случае этот метод выбросит exception, который нам необходимо обработать в нашей программе.
+   ```
+   if (parsedDate != null) {
+      return true;
+   }
+   ```
+
 
 Теперь наша программа умеет проверять корретно ли пользователь ввел данные, теперь наша задача попросить ввести корректную дату, для этого:
 
 1. В методе main запрашиваем пользователя ввести дату.
 2. Считываем ее в переменную String inputDate.
+   ```
+   Scanner scanner = new Scanner(System.in);
+   System.out.println("Введите дату")
+   String inputDate = scanner.next();
+   ```
 3. Передаем эту перменную в метод (функцию) isValidDateFormat.
 4. Оборачиваем ее в блок try/catch.
-5. В блоке catch мы должны поймать иcключение ошибки разбора введеных данных DateTimeParseException:
+5. В блоке catch мы должны поймать (обработать) иcключение (exception) ошибки разбора введеных данных DateTimeParseException:
    - вызываем запрос пользовательского ввода.
-6. Если разбор введенных данных прошел корректно и метод isValidDateFormat вернул `true`, вернуть на экран введенную дату и завершить работу программы.       
-
+   ```
+   try {
+       boolean result = isValidDateFormat(inputDate);
+       System.out.println("Result =" + result);
+   } catch (DateTimeParseException e) {
+       //TODO
+   }
+   ```
+6. Если разбор введенных данных прошел корректно и метод isValidDateFormat вернул `true`, вернуть на экран введенную дату и завершить работу программы.
+       
 
 ## Задача № 3
 
@@ -127,12 +161,43 @@
 ### Процесс реализации
 
 Для решения этой задачи нам нужно создать цикл, в котором мы будем запрашивать числа на вход и тип операции, для выхода из цикла нужно добавить проверку типа операции == 0, а после завершить программу.
-1. Начнем с того, что запросим у пользователя числа, над которыми нужно провести операции:
+1. Начнем с того, что запросим у пользователя числа, над которыми нужно провести операции и саму операцию:
    - считаем первую переменную и запишем ее в value1;
    - считаем вторую переменную и запишем ее в value2.
 2. Попросим пользователя ввести тип операции и записываем значение в переменную operation:
    - проверяем если значение переменной = 0, выходим из цикла и завершаем работу программы;
    - добавляем блок switch, в котором в зависимости от значения переменной operation выполняем нужную арифметическую операцию и выводим результат вычисления на экран.
+   
+   ```
+   Scanner scanner = new Scanner(System.in);
+   String operation = "";
+   double result = 0;
+   
+   while (true) {
+       
+       //Попросим пользователя ввести данные
+       System.out.println("Введите два числа и тип операции (+,-,*,/)");
+       
+       //Считаем введеные значения и сохраним в переменные
+       int value1 = scanner.nextInt();
+       int value2 = scanner.nextInt();
+       String operation = scanner.next();
+       
+       //Выходим из цикла если операция равно нулю
+       if ("0".equals(operation)) {
+          break;
+       }
+       switch (operation) {
+         case "+" : result = value1 + value2;
+           break;
+         case "-" : result = value1 - value2;
+           break;
+         //TODO  
+       }
+       System.out.println("Результат операции = " + result);
+   }
+
+   ```
 3. Запрашиваем ввод новых чисел для вычисления.    
 
 ---
