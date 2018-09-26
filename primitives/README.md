@@ -15,15 +15,17 @@
 2. Добавить условие выхода из цикла:
    - Если пользователь ввел вместо названия задачи `end`, то завершаем цикл.
    ```
-    //Создаем scanner - объектор который будет считывать из стандартного потока ввода/вывода (console)
-    Scanner scanner = new Scanner(System.in);
-    String input = "";
-    //Цикл будет работать пока пользователь не введет `end`
-    while (!"end".equals(input)) {
-        input = scanner.next();
-        //TODO
-    }
-    ```
+   //Создаем scanner - объектор который будет считывать из стандартного потока ввода/вывода (console)
+   Scanner scanner = new Scanner(System.in);
+   String input = "";
+   
+   //Цикл будет работать пока пользователь не введет `end`
+   while (!"end".equals(input)) {
+       
+       input = scanner.next();
+       //TODO
+   }
+   ```
 3. При запусуке программы запросите у пользователя ввод названия задачи. Пример: `Добавить в приложение валидацию дат`.
    Для вывода сообщения в console достаточно использовать:
    ```
@@ -31,14 +33,14 @@
    ```
 4. Сохраните введенное значение в перменную task типа String (`String task = scanner.next();`)
 5. Запросите у пользователя ввод времени на выполнение задачи. Пример: `4 ч`
-  ```
-  System.out.println("Сколько времени потребуется на выполнение задачи?");
-  ```
+   ```
+   System.out.println("Сколько времени потребуется на выполнение задачи?");
+   ```
 6. Сохраните ввденные зачения в переменные `time` (тип int или long) и `unit` (тип Char или String).
-  ```
-    int time = scanner.nextInt();
-    String unit = scanner.next();
-  ```
+   ```
+   int time = scanner.nextInt();
+   String unit = scanner.next();
+   ```
 6. Если значение `time > 0` нужно перевести время в секунды и сохранить:
    - Создать перменную `totalTime = 0` (тип long или int).
    - Создать условие если `unit = ч` умножить time на 3600 и прибавить к totalTime.
@@ -48,48 +50,54 @@
 8. Перезапишите в переменные `time` и `unit` только что введенные значения.
 9. Проверте работу с вводом разных единиц измерения.
 10. Если пользователь ввел `end` выходим цикла, проверяем значение переменной `totalTime` если значение больше нуля, запрашиваем единицу измерения для вывода на экран.
-  ```
-  System.out.println("В какой единице измерения вернуть значение (ч - часы, м - минуты, c - секунды)");
-  ```
+   ```
+   System.out.println("В какой единице измерения вернуть значение (ч - часы, м - минуты, c - секунды)");
+   ```
 11. Если пользователь ввел `end` и `totalTime` меньше или равно нулю, выйти из цикла и завершить работу программы.
-Структура программы будет примерно такая:
-```
-      //Создаем scanner - объектор который будет считывать из стандартного потока ввода/вывода (console)
-      Scanner scanner = new Scanner(System.in);
-      String input = "";
-      int totalTime = 0;
-      //Цикл будет работать пока пользователь не введет `end`
-      while (!"end".equals(input)) {
-          input = scanner.next();
-          //TODO
-          String task = input;
-          int time = scanner.nextInt();
-          String unit = scanner.next();
-          ...
-          //Переведем время в секунды
-          switch (unit) {
-            case "ч" : time = time * 3600;
-              break;
-            case "м" : time = time * 60;
-              break;     
-          }
-          totalTime += time
-      }
-      //После ввода "end" проверяем если totalTime
-      if (totalTime > 0) {
-        System.out.println("В какой единице измерения вернуть значение (ч - часы, м - минуты, c - секунды)");
-        String unit = scanner.next()
-        //Переводим в необходимую единицу измерения
+    Структура программы будет примерно такая:
+    ```
+    //Создаем scanner - объектор который будет считывать из стандартного потока ввода/вывода (console)
+    Scanner scanner = new Scanner(System.in);
+    String input = "";
+    int totalTime = 0;
+    
+    //Цикл будет работать пока пользователь не введет `end`
+    while (!"end".equals(input)) {
+        
+        input = scanner.next();
+        //TODO
+        String task = input;
+        int time = scanner.nextInt();
+        String unit = scanner.next();
+        ...
+        //Переведем время в секунды
         switch (unit) {
-          case "ч" : totalTime = totalTime / 3600;
+          case "ч" : time = time * 3600;
             break;
-          case "м" : totalTime = totalTime / 60;
+          case "м" : time = time * 60;
             break;     
         }
-        //Выводим результат
-        System.out.println(totalTime + " " + unit);
+        totalTime += time
+    }
+    
+    //После ввода "end" проверяем если totalTime
+    if (totalTime > 0) {
+      
+      System.out.println("В какой единице измерения вернуть значение (ч - часы, м - минуты, c - секунды)");
+      String unit = scanner.next()
+      
+      //Переводим в необходимую единицу измерения
+      switch (unit) {
+        case "ч" : totalTime = totalTime / 3600;
+          break;
+        case "м" : totalTime = totalTime / 60;
+          break;     
       }
-```    
+      
+      //Выводим результат
+      System.out.println(totalTime + " " + unit);
+    }
+    ```
 
 ## Задача № 2
 
@@ -128,8 +136,7 @@
       return true;
    }
    ```
-
-
+   
 Теперь наша программа умеет проверять корретно ли пользователь ввел данные, теперь наша задача попросить ввести корректную дату, для этого:
 
 1. В методе main запрашиваем пользователя ввести дату.
@@ -145,8 +152,10 @@
    - вызываем запрос пользовательского ввода.
    ```
    try {
+       
        boolean result = isValidDateFormat(inputDate);
        System.out.println("Result =" + result);
+       
    } catch (DateTimeParseException e) {
        //TODO
    }
@@ -187,6 +196,8 @@
        if ("0".equals(operation)) {
           break;
        }
+       
+       //Расчет результата
        switch (operation) {
          case "+" : result = value1 + value2;
            break;
