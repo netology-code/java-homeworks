@@ -29,7 +29,7 @@ https://drive.google.com/file/d/1a8qZt2Dmab--Un071pSvY81laB2CzySv/view?usp=shari
 
 ```
    Book book = new Book("The Lord of the Rings");
-   FromAvailableStatusMover fromAvailableStatusMover = new FromAvailableStatusMover();
+   AbstractBookMover fromAvailableStatusMover = new FromAvailableStatusMover();
    fromAvailableStatusMover.moveToStatus(book, StatusEnum.AVAILABLE);
    System.out.println(book.getStatus());
 ```
