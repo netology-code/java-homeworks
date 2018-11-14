@@ -21,7 +21,7 @@ https://drive.google.com/file/d/1a8qZt2Dmab--Un071pSvY81laB2CzySv/view?usp=shari
 2. Создайте абстрактный класс `AbstractBookMover` с сигнатурой метода 
 `protected abstract void moveToStatus(Book book, StatusEnum requestedStatus)`
 3. Создать 4 реализации данного абстрактного класса. 
-Например: `FromArchievedStatusMover`, класс в котором будет првоверка и переход книги в запрашиваемый статус, если он возможен,
+Например: `FromArchievedStatusMover`, класс в котором будет проверка и переход книги в запрашиваемый статус, если он возможен,
 если он не возможен, то будет выброшен IllegalStateException.
 Проверку доступности необходимо сделать, используя Enum созданный на первом шаге, оператор switch и диаграмму переходов.
 4. В классе Main.java необходимо будет создать объект класса Book, используя конструктор и убедиться, 
