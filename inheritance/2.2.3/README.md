@@ -9,9 +9,9 @@
 по назначению (грузовые/легковые/пассажирские), по типу кузова (седан/универсал/грузовик/автобус),
 по типу топлива (бензиновые, дизельные, гибридные и электрические).
 
-Необходимо с помощью наследования реализовать программу, в которой будет один интерфейс `VehicleType`, три абстрактных реализаций интерфейса 
+Необходимо с помощью наследования реализовать программу, в которой будет один базовый класс `VehicleType`, три наследника базового класса  
 (`VehicleTypeByPurpose`, `VehicleTypeByBodyTypes`, `VehicleTypeByFuelTypes`), в которых будут определены аттрибуты каждой группы типов 
-и на каждый абстрактный класс по несколько классов, в которых будет определены конкретное определение типа.
+и на каждый класс групп типов по несколько классов, в которых будет определены конкретное определение типа.
 
 Данный функционал пригодится в случае массового фильтрации объявлений по какому-то искомому типу.
 
@@ -20,41 +20,41 @@ model (модели авто) и трех полей с каждым типом,
 и `AdsService`, в котором будет осуществляться фильтрация объявлений.
 
 ### Процесс реализации
-1. Создайте Enum класс `VehicleTypeEnum` с 8 возможными жанрами в нашей программе
+1. Создайте Enum класс `VehicleTypeEnum` с 8 возможными типами авто в нашей программе
 ```
 public enum VehicleTypeEnum {
     TRUCK,CAR,PASSENGER,SEDAN,WAGON,PICKUP,BUS,PETROL,DIESEL,HYBRID,ELECTRIC
 }
 ```
-2. Создайте интерфейс `VehicleType` с сигнатурами двух методов 
+2. Создайте класс `VehicleType` с protected полем `attribute`, конструктором принимающим один аргумент и двумя методами.
 ```
-    String getAttributeOfType();
-    String getTypeName();
-```
-3. Создать три абстрактных реализаций интерфейса. 
-Например: `VehicleTypeByPurpose`, класс в котором будет переопределен метод `getAttributeOfType` и обязательно необходимо переопределить метод `equals` класса `Object`.
-```
-public abstract class VehicleTypeByPurpose implements VehicleType {
-    private String attribute = "Vehicle type by purpose";
-
-    @Override
-    public String getAttributeOfType() {
-        return attribute;
+    String getAttributeOfType() {
+          return attribute;
     }
-
-     @Override
+    String getTypeName() {
+          return "Some vehicle type name";
+    }
+```
+3. Создать три наследника класса `VehicleType`. 
+Например: `VehicleTypeByPurpose`, класс с конструктором, вызывающий конструктор предка и обязательно необходимо переопределить метод `equals` класса `Object`.
+```
+public class VehicleTypeByPurpose implements VehicleType {
+    public VehicleTypeByPurpose() {
+            super("Vehicle type by purpose");
+    }
+    
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
-        VehicleTypeByPurpose that = (VehicleTypeByPurpose) o;
-
-        return attribute != null ? attribute.equals(that.attribute) : that.attribute == null;
-    }
+    
+         VehicleTypeByPurpose that = (VehicleTypeByPurpose) o;
+         return attribute != null ? attribute.equals(that.attribute) : that.attribute == null;
+     }
 }
 ```
-Сделайте самостоятельно остальных два абстрактных класса `VehicleTypeByBodyTypes` и `VehicleTypeByFuelTypes`
-4. Создадим имплементации каждого из абстрактных классов. В них необходимо переопределить только метод `getTypeName`
+Сделайте самостоятельно остальных два класса `VehicleTypeByBodyTypes` и `VehicleTypeByFuelTypes` с собственными атрибутами, присущими данной группе типоа.
+4. Создадим наследников каждого из классов групп типов. В них необходимо переопределить только метод `getTypeName`
 Например:
 ```
 public class PassengerType extends VehicleTypeByPurpose {

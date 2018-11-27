@@ -10,9 +10,9 @@
 Диаграмма жанров указана здесь: 
 https://drive.google.com/file/d/124B8TKF_LY_A_6OXqR-S5M8OKWQMksUP/view?usp=sharing
 
-Необходимо с помощью наследования реализовать программу, в которой будет один интерфейс `Genre`, три абстрактных реализаций интерфейса 
+Необходимо с помощью наследования реализовать программу, в которой будет один базовый класс `Genre`, три наследника базового класса 
 (`GenreByContent`, `GenreByForm`, `GenreByNumberOfPages`), в которых будут определены аттрибуты каждой группы жанров 
-и на каждый абстрактный класс по несколько классов, в которых будет определены конкретное названия жанра.
+и на каждого класса групп жанров по несколько классов, в которых будет определены конкретное названия жанра.
 
 Данный функционал пригодится в случае массового фильтрации книг по какому-то искомому статусу.
 
@@ -25,23 +25,25 @@ public enum GenreEnum {
     STORY,NOVEL,NARRATIVE,PROSE,VERSE,FANTASTIC,DETECTIVE,PROFESSIONAL
 }
 ```
-2. Создайте интерфейс `Genre` с сигнатурами двух методов. 
+2. Создайте класс `Genre` с protected полем `attribute`, конструктором принимающим один аргумент и двумя методами. 
 ```
-    String getAttributeOfGenre();
-    String getGenreName();
+    String getAttributeOfGenre() {
+            return attribute;
+    }
+    
+    String getGenreName() {
+            return "Some genre name";
+    }
 ```
-3. Создать три абстрактных реализаций интерфейса. 
-Например: `GenreByContent`, класс в котором будет переопределен метод `getAttributeOfGenre` и обязательно необходимо переопределить метод `equals` класса `Object`.
+3. Создать три наследника класса Genre. 
+Например: `GenreByContent`, класс с конструктором, вызывающий конструктор предка и обязательно необходимо переопределить метод `equals` класса `Object`.
 ```
-public abstract class GenreByContent implements Genre {
-    private String attribute = "Content of the text";
-
-    @Override
-    public String getAttributeOfGenre() {
-        return attribute;
+public class GenreByContent implements Genre {
+    public GenreByContent() {
+            super("Content of the text");
     }
 
-     @Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -52,9 +54,9 @@ public abstract class GenreByContent implements Genre {
     }
 }
 ```
-Сделайте самостоятельно оставшиеся два абстрактных класса `GenreByForm` и `GenreByNumberOfPages`.
+Сделайте самостоятельно оставшиеся два класса `GenreByForm` и `GenreByNumberOfPages` с собственными атрибутами, присущими данной группе жанров.
 
-4. Создадим имплементации каждого из абстрактных классов. В них необходимо переопределить только метод `getGenreName`.
+4. Создадим наследников каждого из классов групп жанров. В них необходимо переопределить только метод `getGenreName`, конструктор предка будет вызван по умолчанию.
 Например:
 ```
 public class DetectiveGenre extends GenreByContent {
@@ -159,15 +161,16 @@ public class BookService {
 ```
 
 
-## Инструкция по выполнению домашнего задания:
+## Инструкция по выполнению домашнего задания
 
-1. Зарегистрируйтесь на сайте [Repl.IT](https://repl.it/).
+1. Зарегистрируйтесь на сайте [Repl.IT](http://repl.it/).
 2. Перейдите в раздел **my repls**.
 3. Нажмите кнопку **Start coding now!**, если приступаете впервые, или **New Repl**, если у вас уже есть работы.
 4. В списке языков выберите `Java`.
-5. Код пишите в левой части окна.
-6. Посмотреть результат выполнения файла можно, нажав на кнопку **Run**. Результат появится в правой части окна.
-7. После окончания работы нажмите кнопку **Share** и скопируйте ссылку из поля _Share link_.
-8. В личном кабинете на сайте [netology.ru](http://netology.ru/) в поле комментария к домашней работе вставьте скопированную ссылку и отправьте работу на проверку.
+5. Код пишите в левой части окна, вместо строки `System.out.println("Hello world!");`.
+6. Опирайтесь на принятый [стиль оформления кода](https://github.com/netology-code/codestyle/blob/master/java/README.md).
+7. Посмотреть результат выполнения файла можно, нажав на кнопку **Run**. Результат появится в правой части окна.
+8. После окончания работы нажмите кнопку **Share** и скопируйте ссылку из поля Share link.
+9. В личном кабинете на сайте [netology.ru](http://netology.ru/) в поле комментария к домашней работе вставьте скопированную ссылку и отправьте работу на проверку.
 
-_Никаких файлов прикреплять не нужно._
+*Никаких файлов прикреплять не нужно.*
