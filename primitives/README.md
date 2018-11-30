@@ -20,8 +20,8 @@
    
    //Цикл будет работать пока пользователь не введет `end`
    while (!"end".equals(input)) {
-       
-       input = scanner.next();
+       //next.line() не подходит так как будет считывать каждое слово, а не всю строку целиком       
+       input = scanner.nextLine();
        //TODO
    }
    ```
@@ -30,7 +30,7 @@
    ```
    System.out.println("Введите название задачи (для завершения введите end)");
    ```
-4. Сохраните введенное значение в переменную task типа String (`String task = scanner.next();`).
+4. Сохраните введенное значение в переменную task типа String (`String task = scanner.nextLine();`).
 5. Запросите у пользователя ввод времени на выполнение задачи. Пример: `4 ч`
    ```
    System.out.println("Сколько времени потребуется на выполнение задачи?");
@@ -62,8 +62,9 @@
     
     //Цикл будет работать пока пользователь не введет `end`
     while (!"end".equals(input)) {
-        
-        input = scanner.next();
+
+        System.out.println("Введите название задачи (для завершения введите end)");
+        input = scanner.nextLine();
         //TODO
         String task = input;
         int time = scanner.nextInt();
@@ -83,7 +84,7 @@
     if (totalTime > 0) {
       
       System.out.println("В какой единице измерения вернуть значение (ч - часы, м - минуты, c - секунды)");
-      String unit = scanner.next()
+      String unit = scanner.next();
       
       //Переводим в необходимую единицу измерения
       switch (unit) {
@@ -190,7 +191,7 @@
        //Считаем введеные значения и сохраним в переменные
        int value1 = scanner.nextInt();
        int value2 = scanner.nextInt();
-       String operation = scanner.next();
+       operation = scanner.next();
        
        //Выходим из цикла если операция равно нулю
        if ("0".equals(operation)) {
