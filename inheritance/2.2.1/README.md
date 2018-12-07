@@ -33,7 +33,7 @@ protected void moveToStatus(Book book, StatusEnum requestedStatus) {
 
 ```
    Book book = new Book("The Lord of the Rings");
-   AbstractBookMover fromAvailableStatusMover = new FromAvailableStatusMover();
+   BookMover fromAvailableStatusMover = new FromAvailableStatusMover();
    fromAvailableStatusMover.moveToStatus(book, StatusEnum.AVAILABLE);
    System.out.println(book.getStatus());
 ```
