@@ -39,7 +39,7 @@ public enum VehicleTypeEnum {
 Например: `VehicleTypeByPurpose`, класс с конструктором, вызывающий конструктор предка и обязательно необходимо переопределить метод `equals` класса `Object`.
 
 ```
-public class VehicleTypeByPurpose implements VehicleType {
+public class VehicleTypeByPurpose extends VehicleType {
     public VehicleTypeByPurpose() {
             super("Vehicle type by purpose");
     }
@@ -54,7 +54,7 @@ public class VehicleTypeByPurpose implements VehicleType {
      }
 }
 ```
-Сделайте самостоятельно остальных два класса `VehicleTypeByBodyTypes` и `VehicleTypeByFuelTypes` с собственными атрибутами, присущими данной группе типоа.
+Сделайте самостоятельно остальных два класса `VehicleTypeByBodyTypes` и `VehicleTypeByFuelTypes` с собственными атрибутами, присущими данной группе типов.
 4. Создадим наследников каждого из классов групп типов. В них необходимо переопределить только метод `getTypeName`
 
 Например:

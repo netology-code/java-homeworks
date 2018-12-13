@@ -38,7 +38,7 @@ public enum GenreEnum {
 3. Создать три наследника класса Genre. 
 Например: `GenreByContent`, класс с конструктором, вызывающий конструктор предка и обязательно необходимо переопределить метод `equals` класса `Object`.
 ```
-public class GenreByContent implements Genre {
+public class GenreByContent extends Genre {
     public GenreByContent() {
             super("Content of the text");
     }
