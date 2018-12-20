@@ -157,7 +157,7 @@ class TaxService {
 * Базовый класс
 ```java 
 class TaxType {
-    public BigDecimal calculateTaxFor(double amount) {
+    public double calculateTaxFor(double amount) {
         // TODO override me!
         return 0.0;
     }
