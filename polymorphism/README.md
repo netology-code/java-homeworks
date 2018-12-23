@@ -232,22 +232,20 @@ System.out.println(sum.toString()); // => 0.30
 
 Пример создания `Track`:
 ```java
-public static void main(String[] args) {
-    int SONG_LENGHT = 10;
-    
-    List<Instrument> timeline = new ArrayList(SONG_LENGHT);
-    
-    for (int i=0; i<SONG_LENGHT; ++i) {
-        Instrument instrument;
-        if (i % 2 == 0) {
-            instrument = new Piano();
-        } else if (i % 4 == 0) {
-            instrument = new Klaxon();
-        } else {
-            instrument = new Instrument();
-        }
-        timeline.add(instrument);
+int SONG_LENGHT = 10;
+
+List<Instrument> timeline = new ArrayList(SONG_LENGHT);
+
+for (int i=0; i<SONG_LENGHT; ++i) {
+    Instrument instrument;
+    if (i % 4 == 0) {
+        instrument = new Piano();
+    } else if (i % 2 == 0) {
+        instrument = new Klaxon();
+    } else {
+        instrument = new Instrument();
     }
+    timeline.add(instrument);
 }
 ```
 
