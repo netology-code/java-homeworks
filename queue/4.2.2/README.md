@@ -16,13 +16,13 @@
 
 ### Процесс реализации
 1. Создаим объект Scanner и запроси ввести формулу в формате: `2 + 3 * 4`.
-```java
+```
     Scanner scanner = new Scanner(System.in);
     System.out.println("Введите математическую формулу:");
     String input = scanner.nextLine();
 ```
 2. Создадим две коллекции для хранения знаков и чисел, для хранения числе можно использовать Queue, а знаков Stack - так как нужно будет их доставать с конца.
-```java
+```
     Stack<String> sign = new Stack<>();
     Queue<Integer> numbers = new ArrayDeque<>();
 ```
