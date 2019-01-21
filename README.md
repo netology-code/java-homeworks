@@ -34,7 +34,7 @@
 
 [4.2	Коллекции Queue](/queue)
 
-4.3	Коллеция HashSet
+[4.3	Коллеция HashSet](/in-memory-hashset/)
 
 4.4	Коллеция HashMap
 
