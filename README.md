@@ -36,7 +36,7 @@
 
 [4.3	Коллеция HashSet](/in-memory-hashset/)
 
-4.4	Коллеция HashMap
+[4.3	Коллеция HashMap](/in-memory-hashmap/)
 
 4.5	Коллеции TreeSet
 
