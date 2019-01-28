@@ -34,13 +34,13 @@
 
 [4.2	Коллекции Queue](/queue)
 
-[4.3	Коллеция HashSet](/in-memory-hashset/)
+[4.3	Коллекция HashSet](/in-memory-hashset/)
 
-[4.3	Коллеция HashMap](/in-memory-hashmap/)
+[4.4	Коллекция HashMap](/in-memory-hashmap/)
 
-4.5	Коллеции TreeSet
+4.5	Коллекции TreeSet
 
-4.6	Коллеции TreeMap
+4.6	Коллекции TreeMap
 
 
 ## Раздел 2. Android
