@@ -234,7 +234,7 @@ System.out.println(sum.toString()); // => 0.30
 ```java
 int SONG_LENGHT = 10;
 
-List<Instrument> timeline = new ArrayList(SONG_LENGHT);
+List<Instrument> timeline = new ArrayList<>(SONG_LENGHT);
 
 for (int i=0; i<SONG_LENGHT; ++i) {
     Instrument instrument;
