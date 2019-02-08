@@ -184,9 +184,12 @@ vk.com бизнес 1
 
 1. Пишите код в IDE (рекомендуем [Intellij Idea](https://www.jetbrains.com/idea/download/), версия Community).
     1. Почему лучше работать в IDE? 
-Ускоряет работу, есть подсветка ошибок, отладка по шагам.
+
+- Ускоряет работу, есть подсветка ошибок, отладка по шагам.
     3. Почему Intellij Idea? 
-Родитель Android Studio, бесплатная, умная.
+
+- Родитель Android Studio, бесплатная, умная.
+
 3. Опирайтесь на принятый [стиль оформления кода](https://github.com/netology-code/codestyle/blob/master/java/README.md).
 4. Готовый код сдаем в Repl.it. 
 Для этого зарегистрируйтесь на сайте [Repl.IT](http://repl.it/).
