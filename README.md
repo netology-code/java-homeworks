@@ -40,7 +40,7 @@
 
 [4.5	Коллекции TreeSet](/in-memory-treeset/)
 
-4.6	Коллекции TreeMap
+[4.6	Коллекции TreeMap](/in-memory-treemap/)
 
 
 ## Раздел 2. Введение в Android
