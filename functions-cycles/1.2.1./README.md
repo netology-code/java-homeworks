@@ -51,8 +51,8 @@ end <нажмите enter>
 ```
 
 ### Реализация
-1. Создадим новый replt.it как написано в инструкции к выполненю домашней работы и зададим название `task1.2.1`
-2. В файле `Main.java` написан следующий код:
+1. Создадим новый replt.it как написано в инструкции к выполнению домашней работы и зададим название `homework1.2.1`
+2. В файле `Main.java` написан следующий код
 ```
 class Main {
   public static void main(String[] args) {
@@ -60,7 +60,7 @@ class Main {
   }
 }
 ``` 
-Весь код выполнения задачи нужно писать вместо `System.out.println("Hello world!");`, эту строку нужно удалить:
+Весь код выполнения задачи нужно писать вместо `System.out.println("Hello world!");`, эту строку нужно удалить
 ```
   public static void main(String[] args) {
     System.out.println("Hello world!"); //Код сюда
