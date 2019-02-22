@@ -78,7 +78,7 @@ System.out.println("Измените сообщение для вывода ег
 ```
 7. С помощью оператора `if else`, проверить совпадают ли логин и пароль введедный из консоли с тем что мы описали в начале программы:
 ```
-if (login == inputLogin && password == inputPassword) {
+if (login.equals(inputLogin) && password.equals(inputPassword)) {
     //Вывести сообщние в консоль
 } else {
   //Вывести сообщние в консоль
