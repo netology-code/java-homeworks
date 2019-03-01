@@ -39,9 +39,3 @@
 [4.5	Коллекции TreeSet](/in-memory-treeset/)
 
 [4.6	Коллекции TreeMap](/in-memory-treemap/)
-
-# Домашние задания по курсу «Android»
-
-### Блок 5. Структура проекта
-
-[5.1	Введение в Android. Краткий обзор компонентов.](./android-components)
