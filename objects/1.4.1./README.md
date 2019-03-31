@@ -34,7 +34,7 @@
     class Main {
         public static void main(String[] args) {
             System.out.println("Hello world!");
-    }
+        }
     }
     ``` 
     Весь код выполнения задачи нужно писать вместо `System.out.println("Hello world!");`, эту строку нужно удалить.
