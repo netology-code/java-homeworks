@@ -25,25 +25,12 @@
     Queue<Integer> numbers = new ArrayDeque<>();
 ```
 3. Разберем формулу по символам. Для этого воспользуемся методом класса `String split`.
-```
-    String[] arrayValues = input.split(" ");
-```
-4. Во время того как мы будем перебирать элементы, нужно уметь отличать числа от арифметических знаков. Есть несколько способов это сделать. Вы можете воспользоваться своим, а я прeдлагаю создать отдельный метод для проверки, было прочитано чиcло или знак.
-```
-   static boolean isNumber(String value) {
-       try {
-           Integer.parseInt(value);
-           return true;
-       } catch (Exception e) {
-           return false;
-       }
-   }
-```
+4. Во время того как мы будем перебирать элементы, нужно научиться отличать числа от арифметических знаков.
 5. Создадим цикл. Чтобы перебрать все элементы массива чисел и знаков, можно использовать `Stream API` или преобразовать в `List`. Я же создам цикл с индексом и буду добавлять в очередь числа, а в стэк все операции.
 ```
    for (int i = 0; i < arrayValues.length; i++) {
        String value = arrayValues[i];
-       if (isNumber(value)) {
+       if (...) {
            numbers.add(Integer.parseInt(value));
        } else {
            sign.add(value);
@@ -54,11 +41,11 @@
 Пример:
 ```
    while (!numbers.isEmpty()) {
-       System.out.print(numbers.poll() + " ");
+       //ваш код
    }
    
    while (!sign.isEmpty()) {
-       System.out.print(sign.pop() + " ");
+       //ваш код
    }
 ```
 7. Завершаем работу программы.
