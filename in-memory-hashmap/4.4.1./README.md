@@ -46,7 +46,10 @@
   ```
   @Override
   public boolean equals(Object obj) {
-    return name.equals(obj);
+    if (obj == null) return false;
+    if (obj.getClass() != getClass()) return false;
+    Product other = (Product) obj;
+    return name.equals(other.name);
   }
   
   @Override
