@@ -1,9 +1,9 @@
 Домашнее задание к занятию 2.4. Основы ООП - абстракции и интерфейсы
 ==
 
-1. [Библиотека](/abstractions-interfaces/2.4.1./)
-2. [Банковские счета](/abstractions-interfaces/2.4.2./)
-3. [Резюме инженеров](/abstractions-interfaces/2.4.3./)
+1. [Библиотека](/abstractions-interfaces/2.4.1./);
+2. [Банковские счета](/abstractions-interfaces/2.4.2./);
+3. [Резюме инженеров](/abstractions-interfaces/2.4.3./) *(не обязательна к выполнению).
 
 =======
 
