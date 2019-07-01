@@ -175,12 +175,12 @@ public class AdsService {
 
 ```
    AdsService adsService = new AdsService();
-   VehicleAd ad = new VehicleAd("Volvo", "123", new PassengerType(), 
+   VehicleAd volvoAd = new VehicleAd("Volvo", "123", new PassengerType(), 
        null, null);
-   VehicleAd ad = new VehicleAd("Kamaz", "45", new TruckType(), 
+   VehicleAd kamazAd = new VehicleAd("Kamaz", "45", new TruckType(), 
           null, null);
     
-    adsService.setAdList(Arrays.asList(ad));
+    adsService.setAdList(Arrays.asList(volvoAd, kamazAd));
    
     adsService.filterByVehicleTypeByPurpose(new PassengerType());
    
