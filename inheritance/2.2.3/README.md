@@ -63,7 +63,7 @@ public class PassengerType extends VehicleTypeByPurpose {
 
     @Override
     public String getTypeName() {
-        return CarTypeEnum.PASSENGER.name();
+        return VehicleTypeEnum.PASSENGER.name();
     }
 }
 ```
@@ -73,7 +73,7 @@ public class TruckType extends VehicleTypeByPurpose {
 
     @Override
     public String getTypeName() {
-        return GenreEnum.TRUCK.name();
+        return VehicleTypeEnum.TRUCK.name();
     }
 }
 ```
