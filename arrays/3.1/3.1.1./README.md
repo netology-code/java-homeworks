@@ -43,7 +43,7 @@ String[] products = new String[]{"Хлеб", "Яблоки", "Молоко"};
 ```  
 int[] prices = new int[]{100, 200, 300};
 ```
-1. При запуске программы вывести продукты и цены на экран пользователя:
+1. При запуске программы необходимо вывести продукты и цены на экран пользователя:
  ```
  System.out.println(Arrays.toString(products));
  System.out.println(Arrays.toString(prices));
