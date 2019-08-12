@@ -7,12 +7,12 @@
 
 Из одного статуса доступно только ограниченное число статусов. 
 Диаграмма переходов указана здесь: 
-https://drive.google.com/file/d/1a8qZt2Dmab--Un071pSvY81laB2CzySv/view?usp=sharing
+![](https://i.imgur.com/EpJ0tOb.jpg)
 
 Необходимо с помощью наследования реализовать программу, в которой будет 4 наследника базового класса `BookMover` по переводу статуса книги из одного в другой.
 Данный функционал пригодится в случае массового перевода книг в какой-то статус, но мы пока рассмотрим перевод только одной книги.
 
-Также необходимо будет описать класс Book с базовым набором полей title и status.
+Также необходимо будет описать класс Book с базовым набором полей 'title' и 'status'.
 
 ### Функционал программы
 1. Создание книги с начальным статусом `AVAILABLE`;
@@ -21,14 +21,14 @@ https://drive.google.com/file/d/1a8qZt2Dmab--Un071pSvY81laB2CzySv/view?usp=shari
 
 ### Процесс реализации
 1. Создайте Enum класс `StatusEnum` с 4 возможными статусами в нашей программе.
-2. Создайте класс `BookMover` с реализацией метода `moveToStatus`. 
+2. Создайте класс `BookMover` с дефолтной реализацией метода `moveToStatus`. 
 ```
 protected void moveToStatus(Book book, StatusEnum requestedStatus) {
     System.out.println("Moving status...");
 }
 ```
 3. Создайте 4 наследника данного класса. 
-Например: `FromArchievedStatusMover` — класс, в котором будут происходить проверка и переход книги в запрашиваемый статус, если он возможен. Если он невозможен, то будет выброшен IllegalStateException.
+Например: `FromArchievedStatusMover` — класс, в котором будут происходить проверка и переход книги из статуса `ARCHIVED` в запрашиваемый статус, если он возможен. Если он невозможен, то вывести сообщение: "Перевод книги из статуса 'X' в статус 'Y' невозможен".
 Проверку доступности необходимо сделать, используя Enum, созданный на первом шаге, оператор switch и диаграмму переходов.
 4. В классе Main.java необходимо будет создать объект класса Book, используя конструктор. Убедитесь, 
 что функции перехода были реализованы верно и статус у книги корректный. Например:
@@ -36,6 +36,6 @@ protected void moveToStatus(Book book, StatusEnum requestedStatus) {
 ```
    Book book = new Book("The Lord of the Rings");
    BookMover fromAvailableStatusMover = new FromAvailableStatusMover();
-   fromAvailableStatusMover.moveToStatus(book, StatusEnum.AVAILABLE);
+   fromAvailableStatusMover.moveToStatus(book, StatusEnum.BORROWED);
    System.out.println(book.getStatus());
 ```
