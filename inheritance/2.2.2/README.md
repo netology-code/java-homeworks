@@ -13,7 +13,7 @@
 → по содержанию (фантастика/детектив/проф.литература).
 
 Диаграмма жанров указана здесь: 
-https://drive.google.com/file/d/124B8TKF_LY_A_6OXqR-S5M8OKWQMksUP/view?usp=sharing
+![](https://i.imgur.com/Ui1FqtU.jpg)
 
 Необходимо с помощью наследования реализовать программу, в которой будет один базовый класс `Genre`, три наследника базового класса 
 (`GenreByContent`, `GenreByForm`, `GenreByNumberOfPages`), в которых будут определены атрибуты каждой группы жанров, 
@@ -21,7 +21,10 @@ https://drive.google.com/file/d/124B8TKF_LY_A_6OXqR-S5M8OKWQMksUP/view?usp=shari
 
 Данный функционал пригодится в случае массовой фильтрации книг по какому-то искомому статусу.
 
-Также необходимо будет описать класс `Book` с базовым набором полей, состоящим из title и списка жанров, и класс `BookService`, в котором будет осуществляться фильтрация книг.
+Также необходимо будет описать класс `Book` с базовым набором полей, состоящим из 'title' и списка жанров, и класс `BookService`, в котором будет осуществляться фильтрация книг.
+
+### Дополнительная информация
+В задаче рекомендуется использование класса коллекции List<>, более подробный обзор которого будет в следующих лекциях. Назначение этого класса — хранить пронумерованный список объектов одного типа или его производных, указанного в угловых скобках (например List<String> list – объявление списка строк). В пункте "процесс реализации" дан пример работы со списком, его создания и наполнения элементами, определения количества элементов, содержащихся в нём, а также получения конкретного элемента по его номеру.
 
 ### Процесс реализации
 1. Создайте Enum класс `GenreEnum` с 8 возможными жанрами в нашей программе.
@@ -30,13 +33,13 @@ public enum GenreEnum {
     STORY,NOVEL,NARRATIVE,PROSE,VERSE,FANTASTIC,DETECTIVE,PROFESSIONAL
 }
 ```
-2. Создайте класс `Genre` с protected полем `attribute`, конструктором, принимающим один аргумент, и двумя методами. 
+2. Создайте класс `Genre` с protected полем `attribute` типа String, конструктором, принимающим один аргумент, и двумя методами. 
 ```
-    String getAttributeOfGenre() {
+    public String getAttributeOfGenre() {
             return attribute;
     }
     
-    String getGenreName() {
+    public String getGenreName() {
             return "Some genre name";
     }
 ```
@@ -49,17 +52,17 @@ public class GenreByContent extends Genre {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
 
-        GenreByContent that = (GenreByContent) o;
+        GenreByContent genreByContent = (GenreByContent) object;
 
-        return attribute != null ? attribute.equals(that.attribute) : that.attribute == null;
+        return attribute != null ? attribute.equals(genreByContent.attribute) : false;
     }
 }
 ```
-Сделайте самостоятельно оставшиеся два класса `GenreByForm` и `GenreByNumberOfPages` с собственными атрибутами, присущими данной группе жанров.
+Сделайте самостоятельно оставшиеся два класса `GenreByForm` и `GenreByNumberOfPages` с собственным значением поля 'attribute', присущим данной группе жанров.
 
 4. Создайте наследников каждого из классов групп жанров. В них необходимо переопределить только метод `getGenreName`, конструктор предка будет вызван по умолчанию.
 Например:
@@ -83,9 +86,9 @@ public class FantasticGenre extends GenreByContent {
 }
 ```
 
-Создайте остальные имплементации согласно диаграмме.
+Создайте остальных наследников согласно диаграмме.
 
-5. Используя композицию, добавьте в класс Book атрибут — список жанров (genres).
+5. Добавьте в класс Book атрибут — список жанров (genres).
 
 ```
 import java.util.List;
@@ -153,6 +156,9 @@ public class BookService {
 7. В классе Main.java создайте объект класса Book, используя конструктор, и убедитесь, что функция фильтрации была реализована верно. Например:
 
 ```
+   import java.util.Arrays;
+   import java.util.List;
+   .....
    BookService bookService = new BookService();
    Book book = new Book("Lord of the Rings", Arrays.asList(new StoryGenre(), new ProseGenre(), new FantasticGenre()));
    bookService.setBookList(Arrays.asList(book));
@@ -160,6 +166,6 @@ public class BookService {
    bookService.filterBookByGenre(new StoryGenre());
    bookService.filterBookByGenre(new DetectiveGenre());
    
-    bookService.filterBookByGenre(new NarrativeGenre());
-    bookService.filterBookByGenre(new VerseGenre());
+   bookService.filterBookByGenre(new NarrativeGenre());
+   bookService.filterBookByGenre(new VerseGenre());
 ```
