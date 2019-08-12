@@ -13,7 +13,7 @@
 → по типу топлива (бензиновые, дизельные, гибридные и электрические).
 
 Необходимо с помощью наследования реализовать программу, в которой будет один базовый класс `VehicleType`, три наследника базового класса  
-(`VehicleTypeByPurpose`, `VehicleTypeByBodyTypes`, `VehicleTypeByFuelTypes`), в которых будут определены аттрибуты каждой группы типов, 
+(`VehicleTypeByPurpose`, `VehicleTypeByBodyTypes`, `VehicleTypeByFuelTypes`), в которых будeт определено значение поля `attribute` каждой группы типов, 
 и на каждый класс групп типов — по несколько классов, в которых будет определено конкретное определение типа.
 
 Данный функционал пригодится в случае массовой фильтрации объявлений по какому-то искомому типу.
@@ -22,6 +22,9 @@
 * с базовым набором полей, состоящим из id объявления, model (модели авто) и трех полей с каждым типом, 
 * и `AdsService`, в котором будет осуществляться фильтрация объявлений.
 
+### Дополнительная информация
+В задаче рекомендуется использование класса коллекции List<>, более подробный обзор которого будет в следующих лекциях. Назначение этого класса — хранить пронумерованный список объектов одного типа или его производных, указанного в угловых скобках (например List<String> list – объявление списка строк). В пункте "процесс реализации" дан пример работы со списком, его создания и наполнения элементами и перебора всех элементов списка.
+
 ### Процесс реализации
 1. Создайте Enum класс `VehicleTypeEnum` с 8 возможными типами авто в нашей программе.
 ```
@@ -29,12 +32,12 @@ public enum VehicleTypeEnum {
     TRUCK,CAR,PASSENGER,SEDAN,WAGON,PICKUP,BUS,PETROL,DIESEL,HYBRID,ELECTRIC
 }
 ```
-2. Создайте класс `VehicleType` с protected полем `attribute`, конструктором, принимающим один аргумент, и двумя методами.
+2. Создайте класс `VehicleType` с protected полем `attribute` типа String, конструктором, принимающим один аргумент, и двумя методами.
 ```
-    String getAttributeOfType() {
+    public String getAttributeOfType() {
           return attribute;
     }
-    String getTypeName() {
+    public String getTypeName() {
           return "Some vehicle type name";
     }
 ```
@@ -48,16 +51,15 @@ public class VehicleTypeByPurpose extends VehicleType {
     }
     
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(Object object) {
+        if (object == null || getClass() != object.getClass()) return false;
     
-         VehicleTypeByPurpose that = (VehicleTypeByPurpose) o;
-         return attribute != null ? attribute.equals(that.attribute) : that.attribute == null;
+         VehicleTypeByPurpose that = (VehicleTypeByPurpose) object;
+         return attribute != null ? attribute.equals(that.attribute) : false;
      }
 }
 ```
-Сделайте самостоятельно остальные два класса: `VehicleTypeByBodyTypes` и `VehicleTypeByFuelTypes` с собственными атрибутами, присущими данной группе типов.
+Сделайте самостоятельно остальные два класса: `VehicleTypeByBodyTypes` и `VehicleTypeByFuelTypes` с собственным значением поля `attribute`, присущим данной группе типов автомобилей.
 4. Создайте наследников каждого из классов групп типов. В них необходимо переопределить только метод `getTypeName`.
 
 Например:
@@ -83,7 +85,7 @@ public class TruckType extends VehicleTypeByPurpose {
 
 Создайте остальные имплементации.
 
-5. Используя композицию, добавьте в класс `VehicleAd` четыре поля.
+5. Добавьте в класс `VehicleAd` пять полей.
 
 ```
 import java.util.List;
@@ -177,11 +179,15 @@ public class AdsService {
 Например:
 
 ```
-   AdsService adsService = new AdsService();
-   VehicleAd volvoAd = new VehicleAd("Volvo", "123", new PassengerType(), 
-       null, null);
-   VehicleAd kamazAd = new VehicleAd("Kamaz", "45", new TruckType(), 
-          null, null);
+    import java.util.Arrays;
+    import java.util.ArrayList;
+    import java.util.List;
+    ...
+    AdsService adsService = new AdsService();
+    VehicleAd volvoAd = new VehicleAd("Volvo", "123", new PassengerType(), 
+       new SedanType(), new PetrolType());
+    VehicleAd kamazAd = new VehicleAd("Kamaz", "45", new TruckType(), 
+          new PickupType(), new DieselType());
     
     adsService.setAdList(Arrays.asList(volvoAd, kamazAd));
    
