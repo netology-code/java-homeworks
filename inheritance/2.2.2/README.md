@@ -77,7 +77,7 @@ public class GenreByContent extends Genre {
     - class GenreByForm extends Genre, со значением поля attribute - Жанр по форме книги
     - class GenreByNumberOfPages extends Genre со значением поля attribute - Жанр по количеству страниц.
 
-4. Создайте наследников каждого из классов групп жанров, а именно для каждого из базовых классов, созаднных на предыдущем шаге: `GenreByContent`, `GenreByForm`, `GenreByNumberOfPages` нужно создать классы наследники. 
+4. Создайте наследников каждого из классов групп жанров, а именно для каждого из базовых классов, созданных на предыдущем шаге: `GenreByContent`, `GenreByForm`, `GenreByNumberOfPages` нужно создать классы наследники. 
 Для `GenreByContent` - `FantasticGenre`, `DetectiveGenre`, `ProfessionalGenre`
 Для `GenreByForm` - `ProseGenre`, `VerseGenre`
 Для `GenreByNumberOfPages` - `StoryGenre`,`NovelGenre`,`NarrativeGenre`
