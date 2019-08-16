@@ -78,10 +78,15 @@ public class GenreByContent extends Genre {
     - class GenreByNumberOfPages extends Genre со значением поля attribute - Жанр по количеству страниц.
 
 4. Создайте наследников каждого из классов групп жанров, а именно для каждого из базовых классов, созданных на предыдущем шаге: `GenreByContent`, `GenreByForm`, `GenreByNumberOfPages` нужно создать классы наследники. 
-Для `GenreByContent` - `FantasticGenre`, `DetectiveGenre`, `ProfessionalGenre`
-Для `GenreByForm` - `ProseGenre`, `VerseGenre`
-Для `GenreByNumberOfPages` - `StoryGenre`,`NovelGenre`,`NarrativeGenre`
-В каждом классе наследнике нужно переопределить метод `String getGenreName()` и используя на ранее созданное перечисление `enum GenreEnum` возвращать нужное значние из перечисления в этом методе (для того чтобы значение `enum` возвращал строку - имя нашего жанра, нужно вызвать метод `name()`, как указано в примере: `GenreEnum.DETECTIVE.name()`).
+
+Для `GenreByContent` - `FantasticGenre`, `DetectiveGenre`, `ProfessionalGenre`.
+
+Для `GenreByForm` - `ProseGenre`, `VerseGenre`.
+
+Для `GenreByNumberOfPages` - `StoryGenre`,`NovelGenre`,`NarrativeGenre`.
+
+В каждом классе наследнике нужно переопределить метод `String getGenreName()` и, используя на ранее созданное перечисление `enum GenreEnum`, возвращать нужное значние из перечисления в этом методе (для того чтобы значение `enum` возвращал строку - имя нашего жанра, нужно вызвать метод `name()`, как указано в примере: `GenreEnum.DETECTIVE.name()`).
+
 Пример создания жанра детектив:
 ```
 public class DetectiveGenre extends GenreByContent {
