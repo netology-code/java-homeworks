@@ -31,7 +31,7 @@ int SONG_LENGHT = 10;
 
 List<Instrument> timeline = new ArrayList<>(SONG_LENGHT);
 Instrument piano = new Piano();
-Instrument piano = new Instrument();
+Instrument instrument = new Instrument();
 
 for (int i=0; i<SONG_LENGHT; ++i) {
     if (i % 4 == 0) {
