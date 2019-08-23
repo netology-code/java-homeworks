@@ -33,7 +33,7 @@ List<Instrument> timeline = new ArrayList<>(SONG_LENGTH);
 Instrument piano = new Piano();
 Instrument instrument = new Instrument();
 
-for (int i=0; i<SONG_LENGHT; ++i) {
+for (int i = 0; i < SONG_LENGTH; ++i) {
     if (i % 4 == 0) {
         timeline.add(piano);
     } else {
