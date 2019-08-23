@@ -27,9 +27,9 @@
 
 Пример создания `Track`:
 ```java
-int SONG_LENGHT = 10;
+int SONG_LENGTH = 10;
 
-List<Instrument> timeline = new ArrayList<>(SONG_LENGHT);
+List<Instrument> timeline = new ArrayList<>(SONG_LENGTH);
 Instrument piano = new Piano();
 Instrument instrument = new Instrument();
 
