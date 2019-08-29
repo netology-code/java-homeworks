@@ -110,4 +110,4 @@ Set<Product> products = new TreeSet<>(new ProductComparator(relevantMap).reverse
 ```
         printTop3(products);
 ```
-9. Завершим работу проргаммы.
+9. Завершим работу программы.
