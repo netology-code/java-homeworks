@@ -31,6 +31,7 @@ public class Main {
     javac Main.java
 ```
 Результат получим байт-код файл `Main.class`
+
 4. Запустим программу
 ```
     java Main
