@@ -32,7 +32,7 @@
 
 [4.1	Коллекции List](/in-memory_list/)
 
-[4.2	Коллекции Queue](/queue)
+[4.2	Коллекции Queue](/in-memory-queue/)
 
 [4.3	Коллекция HashSet](/in-memory-hashset/)
 
