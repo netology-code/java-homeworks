@@ -86,8 +86,8 @@ scanner.nextInt();
 int radius = scanner.nextInt();
 ```
 
-7. Для рассчета площади окружности создадим константу числа Пи. В этой программе мы воспользуемся еще одним
-типом данных `double` — это вещественный тип с плавающей запятой, он наиболее подходит для хранения числа Пи:
+7. Для рассчета площади окружности нам поднадобиться константа числа Пи. В этой программе мы воспользуемся еще одним
+типом данных `double` — это вещественный тип с плавающей запятой, он наиболее подходит для хранения числа Пи, для объявления неизменяемой переменной нужно написать (будем использовать ее внутри метода)
 
 ```java
 final double Pi = 3.14; 
@@ -98,6 +98,7 @@ final double Pi = 3.14;
 
 ```java
 static double calculateCicleArea(int radius) {
+    final double Pi = 3.14;
     return Pi * radius * radius;
 }
 ```
@@ -108,6 +109,7 @@ static double calculateCicleArea(int radius) {
 
 ```java
 static double calculateCicleLength(int radius) {
+    final double Pi = 3.14;
     return 2 * Pi * radius;
 }
 ```
