@@ -42,10 +42,10 @@ class Main {
 }
 ``` 
 
-Строку нужно удалить `System.out.println("Hello world!");`, эту строку нужно удалить:
+Эту строку нужно удалить:
 
 ```java
-System.out.println("Hello world!"); //Код сюда
+System.out.println("Hello world!");
 ```
 
 3. Для вывода сообщений в консоль используется метод:
