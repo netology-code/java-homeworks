@@ -46,11 +46,11 @@
 `int waitDoorsInSeconds = 10` - количество секунд, которое потребуется на закрытие/открытие дверей;
 `int waitMoveInSeconds = 5` - количество секунд, затрачиваемое лифтом на движение между этажами;
 `int totalSeconds = 0` - всего потрачено времени на движение и остановки лифтом;
-`int previouseFloor = -1` - переменная для хранения предыдущей остановки.
+`int previousFloor = -1` - переменная для хранения предыдущей остановки.
 
-2. В цикле проверяем, если `previouseFloor` не равен `-1`, вычисляем разницу между текущим этажем и предыдущим и с 
+2. В цикле проверяем, если `previousFloor` не равен `-1`, вычисляем разницу между текущим этажем и предыдущим и с 
 помощью метода `Math.abs` найдем абсолютное значение (уберем знак) и умножим на время движения:
-`totalSeconds += Math.abs(currentFloor - previouseFloor) * waitMoveInSeconds`
+`totalSeconds += Math.abs(currentFloor - previousFloor) * waitMoveInSeconds`
 
 3. Добавим время открытия/закрытия дверей к `totalSeconds`:
 `totalSeconds += waitDoorsInSeconds`
