@@ -8,7 +8,7 @@
 
 [1.3. Условные операторы и циклы](./conditional-statements-cycles/)
 
-[1.4	Типы данных в Java: примитивы](./primitives)
+[1.4	Типы данных в Java: примитивы](./primitive-types)
 
 [1.5	Типы данных в Java: объекты](./objects)
 
