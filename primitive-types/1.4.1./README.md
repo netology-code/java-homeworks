@@ -37,8 +37,11 @@ hi
    String input = "";
    
    //Цикл будет работать, пока пользователь не введет `end`
-   while (!"end".equals(input)) {       
+   while (true) {       
        input = scanner.nextLine();
+       if ("end".equals(input)) {
+           break;
+       }
        //TODO
    }
    ```
