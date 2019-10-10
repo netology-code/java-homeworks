@@ -146,7 +146,7 @@ public class Book {
 public class BookService {
 
     //bookList - список книг, genre - жанр для фильтрации (поиска соответствия)
-    public void filterBookByGenre(Genre[] bookList, Genre genre) {
+    public void filterBookByGenre(Book[] bookList, Genre genre) {
         for (Book book : bookList) { //перебираем все книги по очереди
             for (Genre genreFromBook : book.getGenres()) { //у каждой книги перебираем всю коллекцию жанров, которыми она обладает
               if (genreFromBook.getAttributeOfGenre().equals(genre.getAttributeOfGenre())) { //если базовый тип соотвествует базовому типу жанра, который мы передали в качестве аргумента методу, то переходим к следующей проверке
