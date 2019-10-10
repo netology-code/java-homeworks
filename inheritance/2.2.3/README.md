@@ -22,9 +22,6 @@
 * с базовым набором полей, состоящим из id объявления, model (модели авто) и трех полей с каждым типом, 
 * и `AdsService`, в котором будет осуществляться фильтрация объявлений.
 
-### Дополнительная информация
-В задаче рекомендуется использование класса коллекции List<>, более подробный обзор которого будет в следующих лекциях. Назначение этого класса — хранить пронумерованный список объектов одного типа или его производных, указанного в угловых скобках (например List<String> list – объявление списка строк). В пункте "процесс реализации" дан пример работы со списком, его создания и наполнения элементами и перебора всех элементов списка.
-
 ### Процесс реализации
 1. Создайте Enum класс `VehicleTypeEnum` с 8 возможными типами авто в нашей программе.
 ```
@@ -88,8 +85,6 @@ public class TruckType extends VehicleTypeByPurpose {
 5. Добавьте в класс `VehicleAd` пять полей.
 
 ```
-import java.util.List;
-
 public class VehicleAd {
     private String model;
     private String id;
@@ -140,13 +135,10 @@ public class VehicleAd {
 6. Создайте сервис `AdsService`, в котором можно будет отфильтровать объявления по каждому типу. 
 
 ```
-import java.util.ArrayList;
-import java.util.List;
-
 public class AdsService {
-    private List<VehicleAd> adList;
+    private VehicleAd[] adList;
 
-    public void setAdList(List<VehicleAd> adList) {
+    public void setAdList(VehicleAd[] adList) {
         this.adList = adList;
     }
 
@@ -179,17 +171,13 @@ public class AdsService {
 Например:
 
 ```
-    import java.util.Arrays;
-    import java.util.ArrayList;
-    import java.util.List;
-    ...
     AdsService adsService = new AdsService();
     VehicleAd volvoAd = new VehicleAd("Volvo", "123", new PassengerType(), 
        new SedanType(), new PetrolType());
     VehicleAd kamazAd = new VehicleAd("Kamaz", "45", new TruckType(), 
           new PickupType(), new DieselType());
     
-    adsService.setAdList(Arrays.asList(volvoAd, kamazAd));
+    adsService.setAdList(new VehicleAd[] {volvoAd, kamazAd});
    
     adsService.filterByVehicleTypeByPurpose(new PassengerType());
    

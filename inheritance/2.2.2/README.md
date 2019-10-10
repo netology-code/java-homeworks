@@ -23,11 +23,8 @@
 
 Также необходимо будет описать класс `Book` с базовым набором полей, состоящим из `title` и списка жанров, и класс `BookService` с методом `filterBookByGenre`, в котором будет осуществляться фильтрация книг.
 
-Общая идея следующая: у каждой книги можеть быть множество жанров одновременно, мы хотим научиться отбирать книги по нужному
+Общая идея следующая: у каждой книги можеть быть множество жанров разных групп одновременно, мы хотим научиться отбирать книги по нужному
 нам жанру.
-
-### Дополнительная информация
-В задаче рекомендуется использование класса коллекции `List<>`, более подробный обзор которого будет в следующих лекциях. Назначение этого класса — хранить пронумерованный список объектов одного типа или его производных, указанного в угловых скобках (например List<String> list – объявление списка строк). В пункте "процесс реализации" дан пример работы со списком, его создания и наполнения элементами и перебора всех элементов списка.
 
 ### Процесс реализации
 1. Создайте Enum класс `GenreEnum` с 8 возможными жанрами в нашей программе.
@@ -74,7 +71,7 @@ public class GenreByContent extends Genre {
 ```
 Сделайте самостоятельно оставшиеся два класса (так же наследуемых от Genre):
     
-    - class GenreByForm extends Genre, со значением поля attribute - Жанр по форме книги
+    - class GenreByForm extends Genre, со значением поля attribute - Жанр по форме текста.
     - class GenreByNumberOfPages extends Genre со значением поля attribute - Жанр по количеству страниц.
 
 4. Создайте наследников каждого из классов групп жанров, а именно для каждого из базовых классов, созданных на предыдущем шаге: `GenreByContent`, `GenreByForm`, `GenreByNumberOfPages` нужно создать классы наследники. 
@@ -85,7 +82,7 @@ public class GenreByContent extends Genre {
 
 Для `GenreByNumberOfPages` - `StoryGenre`,`NovelGenre`,`NarrativeGenre`.
 
-В каждом классе наследнике нужно переопределить метод `String getGenreName()` и, используя на ранее созданное перечисление `enum GenreEnum`, возвращать нужное значние из перечисления в этом методе (для того чтобы значение `enum` возвращал строку - имя нашего жанра, нужно вызвать метод `name()`, как указано в примере: `GenreEnum.DETECTIVE.name()`).
+В каждом классе наследнике нужно переопределить метод `String getGenreName()` и, используя ранее созданное перечисление `enum GenreEnum`, возвращать нужное значение из перечисления в этом методе (для того чтобы значение `enum` возвращал строку - имя нашего жанра, нужно вызвать метод `name()`, как указано в примере: `GenreEnum.DETECTIVE.name()`).
 
 Пример создания жанра детектив:
 ```
@@ -112,16 +109,14 @@ public class FantasticGenre extends GenreByContent {
 
 На этом этапе создание жанров завершено.
 
-5. Создаим класс книги - `Book`, который будет использовать любые наши реализации жанров (`ProseGenre`, `VerseGenre`, `StoryGenre`,`NovelGenre`,`NarrativeGenre`, `DetectiveGenre`, `FantasticGenre`, `ProfessionalGenre`), для этого в классе `Book` нужно создать поле с типом коллекции `List<Genre> genres`.
+5. Создадим класс книги - `Book`, который будет использовать любые наши реализации жанров (`ProseGenre`, `VerseGenre`, `StoryGenre`,`NovelGenre`,`NarrativeGenre`, `DetectiveGenre`, `FantasticGenre`, `ProfessionalGenre`), для этого в классе `Book` нужно создать поле с типом массив `Genre[] genres`.
 
 ```
-import java.util.List;
-
 public class Book {
     private String title;
-    private List<Genre> genres;
+    private Genre[] genres;
 
-    public Book(String title, List<Genre> genres) {
+    public Book(String title, Genre[] genres) {
         this.title = title;
         this.genres = genres;
     }
@@ -131,7 +126,7 @@ public class Book {
         this.title = title;
     }
 
-    public List<Genre> getGenres() {
+    public Genre[] getGenres() {
         return genres;
     }
 
@@ -148,16 +143,13 @@ public class Book {
 6. Создайте сервис `BookService`, в котором можно будет отфильтровать книги с помощью метода `filterBookByGenre`. Этот класс больше ничего не будет делать, кроме того, что выводить на экран какая из книг соответствует фильтру, а какая нет.
 
 ```
-import java.util.ArrayList;
-import java.util.List;
-
 public class BookService {
 
     //bookList - список книг, genre - жанр для фильтрации (поиска соответствия)
-    public void filterBookByGenre(List<Book> bookList, Genre genre) {
+    public void filterBookByGenre(Genre[] bookList, Genre genre) {
         for (Book book : bookList) { //перебираем все книги по очереди
-            for (Genre genreFromBook : book.getGenres()) { //у каждой книги перебираем всю коллецию жанров, которыми она обладает
-              if (genreFromBook.getAttributeOfGenre().equals(genre.getAttributeOfGenre())) { //если базовый тип соотвествует с базовым типом жанра, который мы передали в качестве аргумента методу, то переходим к следующей проверке
+            for (Genre genreFromBook : book.getGenres()) { //у каждой книги перебираем всю коллекцию жанров, которыми она обладает
+              if (genreFromBook.getAttributeOfGenre().equals(genre.getAttributeOfGenre())) { //если базовый тип соотвествует базовому типу жанра, который мы передали в качестве аргумента методу, то переходим к следующей проверке
                 if (genreFromBook.equals(genre)) { //если жанр соответствует искомому, значит книга подходит по жанру
                     System.out.println("Книга - " + book.getTitle() + " подходит под данный фильтр: жанр - " + genre.getGenreName());
                     break;
@@ -176,23 +168,20 @@ public class BookService {
 7. В классе `Main.java` создайте объект/объекты класса `Book`, используя конструктор, и убедитесь, что функция фильтрации была реализована верно. Например:
 
 ```
-   import java.util.Arrays;
-   import java.util.List;
-   
    public static void main(String[] args) {
-        //Создадим первую книгу с тремя жанрами (Arrays.asList - создает список жанров List<Genre>)
-        Book book1 = new Book("Властелин колец", Arrays.asList(new StoryGenre(), new ProseGenre(), new FantasticGenre()));
-        //Создадим вторую книгу с двумя жанрами (Arrays.asList - создает список жанров List<Genre>)
-        Book book2 = new Book("Шерлок Холмс", Arrays.asList(new NovelGenre(), new DetectiveGenre()));
+        //Создадим первую книгу с тремя жанрами
+        Book book1 = new Book("Властелин колец", new Genre[] {new StoryGenre(), new ProseGenre(), new FantasticGenre())};
+        //Создадим вторую книгу с двумя жанрами
+        Book book2 = new Book("Шерлок Холмс", new Genre[] {new NovelGenre(), new DetectiveGenre())};
 
         //Создадим объект `BookService` - для фильтрации
         BookService bookService = new BookService();
         
         //Вызовем метод фильтрации, куда передадим список книг и жанр фильтрации в качестве аргументов
-        bookService.filterBookByGenre(Arrays.asList(book1, book2), new StoryGenre());
-        bookService.filterBookByGenre(Arrays.asList(book1, book2), new DetectiveGenre());
-        bookService.filterBookByGenre(Arrays.asList(book1, book2), new NarrativeGenre());
-        bookService.filterBookByGenre(Arrays.asList(book1, book2), new VerseGenre());
+        bookService.filterBookByGenre(new Book[]{book1, book2}, new StoryGenre());
+        bookService.filterBookByGenre(new Book[]{book1, book2}, new DetectiveGenre());
+        bookService.filterBookByGenre(new Book[]{book1, book2}, new NarrativeGenre());
+        bookService.filterBookByGenre(new Book[]{book1, book2}, new VerseGenre());
    }
 ```
-8. Протестируем работы программы.
+8. Протестируем работу программы.
