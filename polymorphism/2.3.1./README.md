@@ -22,20 +22,20 @@
 ```java 
 class Player {
     // Указываем тип данных Weapon, который будет храниться в "слотах игрока" 
-    private List<Weapon> weaponSlots;
+    private Weapon[] weaponSlots;
     
     public Player() {
         // Снаряжаем нашего игрока
-        weaponSlots = Arrays.asList(
+        weaponSlots = new Weapon[] {
             // TODO заполнить слоты оружием
             // new BigGun(),
             // new WaterPistol()
-        );
+        };
     }
     
     public int getSlotsCount() {
         // size - позволяет узнать, сколько всего слотов с оружием у игрока
-        return weaponSlots.size();
+        return weaponSlots.length;
     }
     
     public void shotWithWeapon(int slot) {
@@ -44,7 +44,7 @@ class Player {
         // если значение slot некорректно
         
         // Получаем оружие из выбранного слота
-        Weapon weapon = weaponSlots.get(slot);
+        Weapon weapon = weaponSlots[slot];
         // Огонь!
         weapon.shot();
     }
