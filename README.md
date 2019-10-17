@@ -38,8 +38,7 @@
 
 [4.2	Коллекции Queue](/in-memory-queue/)
 
-[4.3	Коллекция HashSet](/in-memory-hashset/)
-[и HashMap](/in-memory-hashmap/)
+[4.3	Коллекция HashSet и HashMap](/hash-collections/)
 
 [4.4	Коллекции TreeSet](/in-memory-treeset/)
 
