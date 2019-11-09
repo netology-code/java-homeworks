@@ -24,8 +24,8 @@
   - BigDecimal cost;
 
 2. Переопределим метод `toString`, чтобы был читаемый вывод информации о продукте. Также добавим всем полям класса 
-`Product` метод `get`, чтобы можно было получать значения, и добавим конструтор для присвоения значений обоим полям во 
-время создания объекта:
+`Product` метод `get`, чтобы можно было получать значения. Добавим конструтор для присвоения значений обоим полям во 
+время создания объекта. А так же сгенерируем методы `equals` и `hashCode`, для использования класса в качестве ключа в `HashMap`:
 
 ```
     public Product(String name, BigDecimal cost) {
@@ -36,6 +36,19 @@
     @Override
     public String toString() {
         return String.format("Наименование: %s, цена: %s", name, cost);
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return name.equals(product.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 ```
 
@@ -58,12 +71,12 @@ public class Main {
 4. Для каждого продукта добавим индекс релевантности:
 
 ```
-        Map<String, Double> relevantMap = new HashMap<>();
-        relevantMap.put(product1.getName(), 2D);
-        relevantMap.put(product2.getName(), 0.1D);
-        relevantMap.put(product3.getName(), 0.2D);
-        relevantMap.put(product4.getName(), 3D);
-        relevantMap.put(product5.getName(), 1D);
+        Map<Product, Double> relevantMap = new HashMap<>();
+        relevantMap.put(product1, 2.0);
+        relevantMap.put(product2, 0.1);
+        relevantMap.put(product3, 0.2);
+        relevantMap.put(product4, 3.0);
+        relevantMap.put(product5, 1.0);
 ``` 
 
 5. Создадим коллекцию `TreeSet` для автоматической сортировки объектов при вставке, для сортировки будем
@@ -80,14 +93,9 @@ public class ProductComparator implements Comparator<Product> {
 
     @Override
     public int compare(Product o1, Product o2) {
-        double product1 = relevantMap.get(o1.getName());
-        double product2 = relevantMap.get(o2.getName());
-        if (product1 > product2) {
-            return 1;
-        } else if (product1 == product2) {
-            return 0;
-        }
-        return -1;
+        double rel1 = relevantMap.get(o1);
+        double rel2 = relevantMap.get(o2);
+        return Double.compare(rel1, rel2);
     }
 }
 ```
@@ -95,10 +103,12 @@ public class ProductComparator implements Comparator<Product> {
 Создание коллекции `TreeSet products` в методе `main`:
 
 ```
-Set<Product> products = new TreeSet<>(new ProductComparator(relevantMap).reversed());
+// reversed() – чтобы изменить направление сортировки, от болле релевантного к менее
+ProductComparator comparator = new ProductComparator(relevantMap).reversed();
+TreeSet<Product> products = new TreeSet<>(comparator);
 ```  
 
-6. Заполним коллекцию `Set<Product> products` ранее созданными `product1, product2, ...` (в методе main):
+6. Заполним коллекцию `TreeSet<Product> products` ранее созданными `product1, product2, ...` (в методе main):
 
 ```
         products.add(product1);
@@ -109,20 +119,20 @@ Set<Product> products = new TreeSet<>(new ProductComparator(relevantMap).reverse
 ```
 
 7. Остался последний шаг — вывести топ 3 наиболее релевантных товара. Для этого напишем статичный метод
-`public static void printTop3(Set<Product> products)`, он будет принимать на вход множество товаров и печатать первые
+`public static void printTop3(TreeSet<Product> products)`, он будет принимать на вход множество товаров и печатать первые
 три из списка в порядке их сортировки:
 
 ```
-    public static void printTop3(Set<Product> products) {
-        Product[] productsArray = products.toArray(new Product[0]);
+    public static void printTop3(TreeSet<Product> products) {
+        Iterator<Product> iterator = products.iterator();
         System.out.println("Рекомендуем вам посмотреть также следующие товары:");
         for (int i = 0; i < 3; i++) {
-            System.out.printf("%d. %s\n", i+1, productsArray[i]);
+            System.out.printf("%d. %s\n", i+1, iterator.next());
         }
     }
 ```
 
-8. Вызовем в методе `main` метод `printTop3` и передадим в качестве аргумента коллекцию `Set<Product> products`:
+8. Вызовем в методе `main` метод `printTop3` и передадим в качестве аргумента коллекцию `TreeSet<Product> products`:
 
 ```
         printTop3(products);
