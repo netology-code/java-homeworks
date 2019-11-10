@@ -29,7 +29,7 @@ class Player {
     }
     
     public int getSlotsCount() {
-        // size - позволяет узнать, сколько всего слотов с оружием у игрока
+        // length - позволяет узнать, сколько всего слотов с оружием у игрока
         return weaponSlots.length;
     }
     
