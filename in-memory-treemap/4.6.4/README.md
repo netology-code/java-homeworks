@@ -46,7 +46,7 @@
 
 Создадим конструктор со всеми параметрами, чтобы заполнить все поля при создании объекта:
 
-```
+```java
     public Patent(String number, String company, String author, int year, String description) {
         this.number = number;
         this.company = company;
@@ -58,7 +58,7 @@
 
 Переопределим метод `toString` для простоты вывода данных в консоль:
 
-```
+```java
     @Override
     public String toString() {
         return String.format("номер: %s, компания: %s, автор: %s, дата: %s, описание: %s", number, company, author,
@@ -68,7 +68,7 @@
 
 2. Создадим класс `Main` для чтения в нем файла и создания метода `public static void main(String[] args)`:
 
-```
+```java
     class Main {
 
     }
@@ -78,7 +78,7 @@
 имя файла, в нашем случае имя файла `patents.csv`. Возвращать этот метод будет карту `Map`, где в качестве ключа значений
 будет использоваться год, а в качестве значений — множество из патентов, опубликованных в этом году `(Set<Patent>)`.
 
-```
+```java
     private static Map<Integer, Set<Patent>> parsePatentsData(String filename) throws FileNotFoundException {
         File file = new File(filename);
         Scanner scanner = new Scanner(file);
@@ -97,13 +97,14 @@
                 patentsMap.put(patent.getYear(), patentsSet);
             }
         }
+	scanner.close();
         return patentsMap;
     }
 ``` 
 
 4. Напишем метод для вывода прочитанных значений из файла:
 
-```
+```java
     private static void printPatents(Map<Integer, Set<Patent>> patentsMap) {
         System.out.println("Каталог патентов");
         for (Entry<Integer, Set<Patent>> entry : patentsMap.entrySet()) {
@@ -117,7 +118,7 @@
 
 5. В методе `main` вызовем методы для чтения из файла и вывод патентов на экран:
 
-```
+```java
     public static void main(String[] args) throws FileNotFoundException {
         String filename = "src/patents.csv";
         Map<Integer, Set<Patent>> patentsMap = parsePatentsData(filename);
