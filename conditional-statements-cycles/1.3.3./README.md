@@ -1,7 +1,7 @@
 ## Задача 3. Конвертер
 
 ### Описание
-Напишем программу перевода из одной системы счисления в другую. Из 16, 8 и 2 в 10 и обратно.
+Напишем программу перевода из одной системы счисления в другую. Из 16 и 2 в 10 и обратно.
 
 ### Функционал программы
 1. Ввод числа;
@@ -12,13 +12,11 @@
 ```
 Из какой системы в какую переводим?
 1. 16 -> 10
-2. 8 -> 10
-3. 2 -> 10
-4. 10 -> 16
-5. 10 -> 8
-6. 10 -> 2
+2. 2 -> 10
+3. 10 -> 16
+4. 10 -> 2
 Выберите и нажмите ввод:
-3 <enter>
+2 <enter>
 Введите число для перевода:
 00000001
 Результат:
@@ -40,11 +38,9 @@
 ```java
     System.out.println("Из какой системы в какую переводим?"
       + "\n1. 16 -> 10" 
-      + "\n2. 8 -> 10"
-      + "\n3. 2 -> 10"
-      + "\n4. 10 -> 16"
-      + "\n5. 10 -> 8"
-      + "\n6. 10 -> 2"
+      + "\n2. 2 -> 10"
+      + "\n3. 10 -> 16"
+      + "\n4. 10 -> 2"
       + "\nВыберите и нажмите ввод или введите 0 для завершения программы:");
     int choise = scanner.nextInt();
 ``` 
@@ -65,24 +61,15 @@
             break;
           }
           case 2: {
-            result = Integer.valueOf(inputValue, 8).toString();
-            break;
-          }
-          case 3: {
             result = Integer.valueOf(inputValue, 2).toString();
             break;
           }
-          case 4: {
+          case 3: {
             int digitalValue = Integer.valueOf(inputValue);
             result = Integer.toHexString(digitalValue);
             break;
           }
-          case 5: {
-            int digitalValue = Integer.valueOf(inputValue);
-            result = Integer.toOctalString(digitalValue);
-            break;
-          }
-          case 6: {
+          case 4: {
             int digitalValue = Integer.valueOf(inputValue);
             result = Integer.toBinaryString(digitalValue);
             break;
