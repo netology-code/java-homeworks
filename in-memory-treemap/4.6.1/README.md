@@ -87,7 +87,7 @@ Map<String, Contact> contacts = new HashMap<>();
 хранения и работы с этой коллекцией `MissedCalls.java`.
 
 ```
-Map<String, String> missedCalls = new TreeMap<>();
+Map<LocalDateTime, String> missedCalls = new TreeMap<>();
 ```
 
 Нужно реализовать следующие `public` методы:
