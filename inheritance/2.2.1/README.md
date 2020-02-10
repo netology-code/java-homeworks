@@ -20,10 +20,10 @@
 3. В случае перевода книги в недопустимый для нее статус вывести сообщение: "Перевод книги из статуса 'X' в статус 'Y' невозможен".
 
 ### Процесс реализации
-1. Создайте Enum класс `StatusEnum` с 4 возможными статусами в нашей программе.
+1. Создайте Enum класс `Status` с 4 возможными статусами в нашей программе.
 2. Создайте класс `BookMover` с дефолтной реализацией метода `moveToStatus`. 
 ```
-protected void moveToStatus(Book book, StatusEnum requestedStatus) {
+protected void moveToStatus(Book book, Status requestedStatus) {
     System.out.println("Moving status...");
 }
 ```
@@ -36,6 +36,6 @@ protected void moveToStatus(Book book, StatusEnum requestedStatus) {
 ```
    Book book = new Book("The Lord of the Rings");
    BookMover fromAvailableStatusMover = new FromAvailableStatusMover();
-   fromAvailableStatusMover.moveToStatus(book, StatusEnum.BORROWED);
+   fromAvailableStatusMover.moveToStatus(book, Status.BORROWED);
    System.out.println(book.getStatus());
 ```
