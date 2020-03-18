@@ -139,8 +139,8 @@ int area = calculateArea(length, width);
 12. Выведем результат на экран:
 
 ```
-System.out.println("Периметр участка: " + perimeter +  " см.");
-System.out.println("Площадь участка: " + area +  " см.кв.");
+System.out.println("Периметр участка: " + perimeter +  " м.");
+System.out.println("Площадь участка: " + area +  " м.кв.");
 ```
 
 11. Завершим работу программы.
