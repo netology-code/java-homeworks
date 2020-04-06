@@ -39,6 +39,7 @@ public static void validEvent(Event event)
 ```
 Если хоть одно из полей не заполнено, нужно выбросить исключение throw new RuntimeException, обрабатывать
 или перехватывать эту ошибку нигде не нужно.
+
 6. Добавим в класс Main метод main для запуска и валидации созданных событий:
 ```java
 public static void main(String[] args) {
