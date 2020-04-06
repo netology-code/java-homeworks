@@ -30,6 +30,8 @@
 
 [3.4	Абстракции и интерфейсы](./abstractions-interfaces/)
 
+[3.5 Исключения, Stacktrace](./exceptions)
+
 
 
 ### Блок 4. InMemory хранение данных — коллекции
