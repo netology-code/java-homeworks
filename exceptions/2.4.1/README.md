@@ -17,7 +17,7 @@
 ### Процесс реализации
 1. Создадим класс User, в котором будем хранить инфомрацию о логине, пароле и возрасте пользователя: 
 class User, login, password, email, age;
-2. Создадим класс исключение UserNotFoundException на основе базового класса Exception. Это исключение будем использовать, если пользователь ввел не верный логин или пароль:
+2. Создадим класс исключение UserNotFoundException на основе базового класса Exception. Это исключение будем использовать, если пользователь ввел неверный логин или пароль:
 ```java
 public class UserNotFoundException extends Exception {
     public UserNotFoundException(String message) {
@@ -26,7 +26,7 @@ public class UserNotFoundException extends Exception {
 }
 ```
 3. Аналогичным образом создадим класс исключения AccessDeniedException
-4. Создадим класс Main в котором создадим метод getUsers, этот метод должен возвращать список заранее созданных пользователей:
+4. Создадим класс Main, в котором создадим метод getUsers, этот метод должен возвращать список заранее созданных пользователей:
 ```java
 public static User[] getUsers() {
     User user1 = new User("jhon", "jhon@gmail.com", "pass", 24);
@@ -34,8 +34,7 @@ public static User[] getUsers() {
     return new User[]{user1, ...};
 }
 ```
-5. Создадим в классе Main метод getUserByLoginAndPassword(String login, String password), в этом методе нужно найти соответствие пары логина и пароля пользователя из массива
-возвращаемого методом getUsers, если пользователь не найден выбрасываем исключение UserNotFoundException, иначе возвращаем найденного пользователя:
+5. Создадим в классе Main метод getUserByLoginAndPassword(String login, String password), в этом методе нужно найти соответствие пары логина и пароля пользователя из массива, возвращаемого методом getUsers. Если пользователь не найден, выбрасываем исключение UserNotFoundException, если найден - возвращаем найденного пользователя:
 ```java
 public static User getUserByLoginAndPassword(String login, String password) throws UserNotFoundException {
     User[] users = getUsersList();
@@ -45,12 +44,12 @@ public static User getUserByLoginAndPassword(String login, String password) thro
     throw new UserNotFoundException("User not found");    
 }   
 ```
-6. Создадим к классе Main еще один метод validateUser для проверки возрастра пользователя, если возраст менее 18 лет метод должен выбросить исключение AccessDeniedException:
+6. Создадим к классу Main еще один метод validateUser для проверки возрастра пользователя. Если возраст менее 18 лет, метод должен выбросить исключение AccessDeniedException:
 ```java
 public static void validateUser(User user) throws AccessDeniedException
 ``` 
 7. Добавим последний метод в классе Main для запуска программы public static void main(String[] args) throws UserNotFoundException, AccessDeniedException
-В нем нужно запросить логин и пароль пользователя, проверить есть ли данная пара логин и пароль в массиве пользователей и последним шагом провадировать возраст.
+В нем нужно запросить логин и пароль пользователя, проверить есть ли данная пара "логин и пароль" в массиве пользователей и последним шагом провалидировать возраст.
 ```java
     public static void main(String[] args) throws UserNotFoundException, AccessDeniedException {
 
@@ -69,4 +68,4 @@ public static void validateUser(User user) throws AccessDeniedException
     }
 
 ```
-8. Программа завершена.
+8. Программа завершена. Вы огонь!
