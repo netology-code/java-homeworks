@@ -64,7 +64,7 @@ public class UrlUtils {
     }
 }
 ```
-5. Добавим созданный метрд проверки урл в метод main:
+5. Добавим созданный метод проверки урл в метод main:
 ```java
 public static void main(String[] args) {
     try (Scanner scanner = new Scanner(System.in)) {
