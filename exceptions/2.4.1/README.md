@@ -67,4 +67,4 @@ public static void validateUser(User user) throws AccessDeniedException
     }
 
 ```
-8. Программа завершена. Вы огонь!
+8. Программа завершена. Отличная работа!
