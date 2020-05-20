@@ -16,8 +16,6 @@
 
 [1.6	Структура класса](class-structure)
 
-[1.7    Исключения, Stacktrace](exceptions)
-
 
 ### Блок 2. InMemory хранение данных — массивы
 
@@ -33,6 +31,8 @@
 [3.2	Полиморфизм](polymorphism)
 
 [3.3	Абстракции и интерфейсы](abstractions-interfaces)
+
+[3.4    Исключения, Stacktrace](exceptions)
 
 
 ### Блок 4. InMemory хранение данных — коллекции
