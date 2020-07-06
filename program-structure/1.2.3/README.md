@@ -128,7 +128,7 @@ static int calculateArea(int length, int width) {
 ```java
 Scanner scanner = new Scanner(System.in);
 System.out.println("Введите длину участка в метрах:");
-int lenght = scanner.nextInt();
+int length = scanner.nextInt();
 System.out.println("Введите ширину участка в метрах:");
 int width = scanner.nextInt();
 
