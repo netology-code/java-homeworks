@@ -4,7 +4,7 @@
 
 ### Блок 1. Основы Java
 
-[1.1	Первая программа на Java](introduction)
+[1.1 Введение в программирование на Java](introduction)
 
 [1.2	Структура программы](program-structure)
 
