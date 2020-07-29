@@ -37,12 +37,14 @@
 
 ### Блок 4. InMemory хранение данных — коллекции
 
-[4.1	Коллекции List](list)
+[4.1 Generics в коллекциях и методах] ()
 
-[4.2	Коллекции Queue](queue)
+[4.2	Коллекции List](list)
 
-[4.3	Коллекция HashSet и HashMap](hash-collections)
+[4.3	Коллекции Queue](queue)
 
-[4.4	Коллекции TreeSet](treeset)
+[4.4	Коллекция HashSet и HashMap](hash-collections)
+
+[4.5	Коллекции TreeSet](treeset)
 
 [4.5	Коллекции TreeMap](treemap)
