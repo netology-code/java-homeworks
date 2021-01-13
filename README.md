@@ -37,7 +37,7 @@
 
 ### Блок 4. InMemory хранение данных — коллекции
 
-[4.1 Generics в коллекциях и методах](https://github.com/netology-code/jd-homeworks/blob/master/generics/README.md)
+[4.1 Generics в коллекциях и методах](generics)
 
 [4.2	Коллекции List](list)
 
