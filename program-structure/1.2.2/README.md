@@ -99,7 +99,7 @@ final double Pi = 3.14;
 площадь может получиться так же дробным числом, поэтому наш метод должен возвращать тип данных `double`:
 
 ```java
-static double calculateCircleArea(int radius) {
+public static double calculateCircleArea(int radius) {
     final double Pi = 3.14;
     return Pi * radius * radius;
 }
@@ -110,7 +110,7 @@ static double calculateCircleArea(int radius) {
 длина может получиться так же дробным числом, поэтому наш метод должно возвращать `double`:
 
 ```java
-static double calculateCircleLength(int radius) {
+public static double calculateCircleLength(int radius) {
     final double Pi = 3.14;
     return 2 * Pi * radius;
 }
