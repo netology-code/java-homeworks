@@ -92,7 +92,7 @@ int radius = scanner.nextInt();
 типом данных `double` — это вещественный тип с плавающей запятой, он наиболее подходит для хранения числа Пи, для объявления неизменяемой переменной (будем использовать ее внутри метода на следующих шагах) нужно написать:
 
 ```java
-final double Pi = 3.14; 
+final double PI = 3.14; 
 ```
 
 8. Создадим метод, принимающий целое число в качестве аргумента. Назовем его `calculateCircleArea`, он будет рассчитывать площадь круга и возвращать результат из метода.  Так как число Пи дробное, то и рассчитанная
@@ -100,8 +100,8 @@ final double Pi = 3.14;
 
 ```java
 public static double calculateCircleArea(int radius) {
-    final double Pi = 3.14;
-    return Pi * radius * radius;
+    final double PI = 3.14;
+    return PI * radius * radius;
 }
 ```
 
@@ -111,8 +111,8 @@ public static double calculateCircleArea(int radius) {
 
 ```java
 public static double calculateCircleLength(int radius) {
-    final double Pi = 3.14;
-    return 2 * Pi * radius;
+    final double PI = 3.14;
+    return 2 * PI * radius;
 }
 ```
 
