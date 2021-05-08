@@ -35,8 +35,8 @@ class Player {
     
     public void shotWithWeapon(int slot) {
         // TODO проверить на выход за границы
-        // выбросить IllegalArgumentException,
-        // если значение slot некорректно
+        // если значение slot некорректно, то
+        // выйти из метода написав об этом в консоль
         
         // Получаем оружие из выбранного слота
         Weapon weapon = weaponSlots[slot];
