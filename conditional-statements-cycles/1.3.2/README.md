@@ -100,7 +100,7 @@ end <нажмите enter>
 (дней, часов и минут), сохраним каждое значение в переменные: `days`, `hours`, `minutes`. Пример:
     ```
     System.out.println("Сколько дней потребуется на выполнение?");
-    int days = scanner.nextInt();
+    int days = Integer.parseInt(scanner.nextInt());
     ```
 
 
@@ -126,7 +126,7 @@ end <нажмите enter>
     
     ```
 
-10. Прибавим значение переменной `currentTimeTask` к переменной `totalTime`, то есть `totalTime +=currentTimeTask`, либо `totalTime = totalTime + currentTimeTask`.
+10. Прибавим значение переменной `currentTimeTask` к переменной `totalTime`, то есть `totalTime += currentTimeTask`, либо `totalTime = totalTime + currentTimeTask`.
 
 
 11. Сравним значение переменной `currentTimeTask` со значением переменной `biggestTime`. Если значение `currentTimeTask` больше значения `biggestTime`, то присвоить значение `currentTimeTask` к `biggestTime`.
@@ -148,7 +148,6 @@ end <нажмите enter>
     while (true){
         //здесь код написанный в ходе выполнения шагов 7, 9, 10, 11, 12, 13
         //...
-        scanner.nextLine(); //при вызове nextLine() после nextInt() автоматически считается пустая строка, здесь мы ее игнорируем
         String input = scanner.nextLine(); //а здесь уже будет то, что реально ввел пользователь
         if ("end".equals(input)) {
             break;
