@@ -100,7 +100,7 @@ end <нажмите enter>
 (дней, часов и минут), сохраним каждое значение в переменные: `days`, `hours`, `minutes`. Пример:
     ```
     System.out.println("Сколько дней потребуется на выполнение?");
-    int days = Integer.parseInt(scanner.nextInt());
+    int days = Integer.parseInt(scanner.nextLine());
     ```
 
 
