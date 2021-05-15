@@ -148,7 +148,7 @@ end <нажмите enter>
     while (true){
         //здесь код написанный в ходе выполнения шагов 7, 9, 10, 11, 12, 13
         //...
-        String input = scanner.nextLine(); //а здесь уже будет то, что реально ввел пользователь
+        String input = scanner.nextLine(); //что ввел пользователь
         if ("end".equals(input)) {
             break;
         }
