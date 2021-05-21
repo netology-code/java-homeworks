@@ -64,7 +64,7 @@
         BufferedImage bwImg = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_BYTE_GRAY);
         // Попросим у этой картинки инструмент для рисования на ней:
         Graphics2D graphics = bwImg.createGraphics();
-        // А этому инструменту скажем, чтобы он скопировался из нашей суженной картинки:
+        // А этому инструменту скажем, чтобы он скопировал содержимое из нашей суженной картинки:
         graphics.drawImage(scaledImage, 0, 0, null);
 
         // Теперь в bwImg у нас лежит чёрно-белая картинка нужных нам размеров.
