@@ -46,3 +46,6 @@
 [4.4	Коллекция HashMap и HashSet](hash-collections)
 
 [4.5	Коллекции Treemap и TreeSet](tree-collections)
+
+### Дипломная работа
+[Конвертер в текстовую графику](diploma/diploma.md)
