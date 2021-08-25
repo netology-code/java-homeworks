@@ -23,16 +23,15 @@
 1. Создаем объект для продуктов. 
  ```
 public class Product {
-    private String name;
-    private int price;
-    private String description;
+    public String name;
+    public int price;
+    public String description;
 
     public Product(int price, String name, String description) {
        this.name = name;
        this.price = price;
        this.description = description;
     }
-    // getters and setters
  }
  ```
 2. Пишем метод сортировки, который при входе получает список продуктов (массив объектов, типа "Продукт").
