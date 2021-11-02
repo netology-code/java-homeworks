@@ -120,7 +120,7 @@ end <Enter>
 
 4. Для каждой системы налогооблажения напишите метод, рассчитывающий налог. Не забудьте что налог отрицательным быть не может. Например, для УСН доходы минус расходы это будет выглядеть так:
    ```java
-   public static int taxEarningsOnly(int earnings, int spendings) {
+   public static int taxEarningsMinusSpendings(int earnings, int spendings) {
       int tax = (earnings - spendings) * 15 / 100;
       if (tax >= 0) {
          return tax;
