@@ -81,7 +81,7 @@ end <Enter>
    while (true) {     
        // Выводим информацию о возможных операциях пользователю
    
-       input = scanner.nextLine();
+       String input = scanner.nextLine();
        if ("end".equals(input)) {
            break;
        }
