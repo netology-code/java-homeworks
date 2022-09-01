@@ -6,13 +6,13 @@
 
 [1. Введение в программирование на Java](introduction)
 
-[2.	Структура программы](program-structure)
+[2. Структура программы](program-structure)
 
-[3.   Условные операторы и циклы](conditional-statements-cycles)
+[3. Условные операторы и циклы](conditional-statements-cycles)
 
-[4.	Типы данных в Java: примитивы](primitive-types)
+[4. Типы данных в Java: примитивы](primitive-types)
 
-5.	Типы данных в Java: объекты (квиз)
+5. Типы данных в Java: объекты (квиз)
 
 [6.	Структура класса](class-structure)
 
