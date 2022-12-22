@@ -35,6 +35,7 @@
 ## Задачи для тренировки
 1. https://www.hackerrank.com/
 1. https://leetcode.com/
+1. https://codewars.com/
 
 ## Соревнования
 1. https://codeforces.com/
