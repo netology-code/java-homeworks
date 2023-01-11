@@ -19,7 +19,7 @@
 
 ## Материалы, которые пригодятся для выполнения задания
 
-1. [Как поделиться реплитом для проверки?](https://github.com/netology-code/java2-homeworks/blob/main/QA_ReplitShare.md)
+1. [Как поделиться реплитом для проверки?](https://github.com/netology-code/java-homeworks/blob/java-43/QA_ReplitShare.md)
 
 ------
 
