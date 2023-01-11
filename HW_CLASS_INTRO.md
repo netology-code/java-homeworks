@@ -20,8 +20,8 @@
 ## Материалы, которые пригодятся для выполнения задания
 
 1. [Как поделиться реплитом для проверки?](https://github.com/netology-code/java-homeworks/blob/java-43/QA_ReplitShare.md)
-2. [Как автоотформатировать код?](https://github.com/netology-code/java2-homeworks/blob/main/QA_Format.md)
-3. [Как залить проект из идеи в реплит?](https://github.com/netology-code/java2-homeworks/blob/main/QA_ReplitUpload.md)
+2. [Как автоотформатировать код?](https://github.com/netology-code/java-homeworks/blob/java-43/QA_Format.md)
+3. [Как залить проект из IDEA в реплит?](https://github.com/netology-code/java-homeworks/blob/java-43/QA_ReplitUpload.md)
 
 ------
 
