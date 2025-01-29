@@ -21,7 +21,7 @@ John Smith
 
 2. Создайте новый java-проект. Следуйте [этой инструкции](https://gitverse.ru/netology/Instructions/content/master/GigaIDE/installation.md)
 
-3. Добавьте в .java файл код ниже
+3. Добавьте в .java файл код ниже:
    
     ```
     class Main {
