@@ -22,8 +22,11 @@
 ```
 
 ### Реализация
-1. Создадим новый repl на сайте [repl.it](https://repl.it/repls), как написано в инструкции к выполнению домашней работы.
-2. В файле `Main.java` написан следующий код:
+1. Откройте среду разработки Giga IDE
+
+2. Создайте новый java-проект. Следуйте [этой инструкции](https://gitverse.ru/netology/Instructions/content/master/GigaIDE/installation.md)
+
+3. Добавьте в .java файл код ниже:
 
 ```java
 class Main {
