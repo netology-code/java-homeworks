@@ -26,8 +26,8 @@
 
 В этом курсе рекомендуем вам использовать среду разработки Giga IDE и систему контроля версий GitVerse/GitHub:
 
-    - [инструкция по установке Giga IDE](https://gitverse.ru/netology/Instructions/content/master/GigaIDE/installation.md).
-    - [загрузка файлов на GitVerse](https://netospace.ru/drive/d/s/11xdm1agxRe2dwMDGrLExhoukySBNewg/91RB2G9FteFqXCvbnoGY3Jp-09EyPCaR-cL1AP0IoBAw)
-
+- [инструкция по установке Giga IDE](https://gitverse.ru/netology/Instructions/content/master/GigaIDE/installation.md).
+- [загрузка файлов на GitVerse](https://netospace.ru/drive/d/s/11xdm1agxRe2dwMDGrLExhoukySBNewg/91RB2G9FteFqXCvbnoGY3Jp-09EyPCaR-cL1AP0IoBAw).
+  
 В Giga IDE создавайте проекты и пишите код. В GitVerse/GitHub загружайте файлы.
 Чтобы сдать задание на проверку, загрузите .java файл на GitVerse/GitHub и прикрепите ссылку в личном кабинете.
