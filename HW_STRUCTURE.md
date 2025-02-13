@@ -10,10 +10,11 @@
 
 ## Инструкция по выполнению домашнего задания
 
-В этом курсе рекомендуем вам использовать среду разработки Giga IDE и систему контроля версий GitVerse/GitHub:
+В этом курсе рекомендуем вам использовать среду разработки Giga IDE и систему контроля версий GitVerse или GitHub (если знакомы с этим инструментом или находитесь не на территории РФ):
 
 - [инструкция по установке Giga IDE](https://gitverse.ru/netology/Instructions/content/master/GigaIDE/installation.md).
-- [загрузка файлов на GitVerse](https://netospace.ru/drive/d/s/11xdm1agxRe2dwMDGrLExhoukySBNewg/91RB2G9FteFqXCvbnoGY3Jp-09EyPCaR-cL1AP0IoBAw).
+- [загрузка файлов на GitVerse](https://netospace.ru/drive/d/s/11xdm1agxRe2dwMDGrLExhoukySBNewg/91RB2G9FteFqXCvbnoGY3Jp-09EyPCaR-cL1AP0IoBAw)
+- [загрузка файлов на GitHub](https://netospace.ru/drive/drive/d/s/127U73eMwa1mXJIqAcqNH6IpzVDuCWcs/gePawWrhKYzS87DinJ5NfuRitcKzdeMB-pragJ77JCww)
   
 В Giga IDE создавайте проекты и пишите код. В GitVerse/GitHub загружайте файлы.
 Чтобы сдать задание на проверку, загрузите .java файл на GitVerse/GitHub и прикрепите ссылку в личном кабинете.
